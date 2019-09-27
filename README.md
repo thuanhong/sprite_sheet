@@ -614,3 +614,4 @@ ValueError: 'The image mode 'P' is not supported
 Et voilà!
 
 ![](image/barbarian_boudinng_boxes.png)
+![](new.png)
