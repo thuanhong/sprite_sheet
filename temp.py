@@ -23,12 +23,15 @@ for x in range(rows):
                     new_array[x][y] = new_array[i][j]
                 elif new_array[x][y] != new_array[i][j]:
                     connect[new_array[i][j]].append(new_array[x][y])
-        if not new_array[x][y]:
-            new_array[x][y] = label
-            connect[label] = []
-            label += 1
+                    break
+        else:
+            if not new_array[x][y]:
+                new_array[x][y] = label
+                connect[label] = []
+                label += 1
 
 temp_list = list(connect.keys())
+
 
 for x in reversed(temp_list):
     count = 0
@@ -37,21 +40,16 @@ for x in reversed(temp_list):
         while True:
             connect[x] += connect[connect[x][count]]
             connect[x] = list(set(connect[x]))
-            del connect[connect[x][count]]
             count += 1
-    except (IndexError, KeyError):
+    except (IndexError):
         continue
 
 
 temp_list = list(connect.keys())
 
-f = open('obj.js', 'w')
-f.write(str(connect))
-f.close()
 
 for index1, key in enumerate(temp_list[:-1]):
     for index2, key2 in enumerate(temp_list[index1+1:], index1+1):
-        # print(index2, key2)
         new_list = connect[key2] + [key2]
         if any(x in connect[key] for x in new_list):
             connect[key] += new_list
@@ -60,11 +58,17 @@ for index1, key in enumerate(temp_list[:-1]):
 
 connect = {k: v for k, v in connect.items() if v}
 
-
+# f = open('obj.js', 'w')
+# f.write(str(connect))
+# f.close()
 
 for label, x in enumerate(connect, 1):
     for a in connect[x]:
         new_array[new_array == a] = label
-    new_array[new_array == x] = label
+    new_array[new_array == x]
+temp_array = np.argwhere(new_array == 1)
+x_max, y_max = np.amax(temp_array, axis=0)
+x_min, y_min = np.amin(temp_array, axis=0)
+
 
 # np.savetxt("filename", new_array, newline="\n", fmt='%d')
