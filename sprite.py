@@ -3,7 +3,7 @@ from PIL import Image
 
 class Sprite():
     def __init__(self, label, x1, y1, x2, y2):
-        if any(not isinstance(x, int) or x < 0 for x in [label, x1, x2, y1, y2]) or (x2, y2) <= (x1, y1):
+        if any(not isinstance(x, int) or x < 0 for x in [x1, x2, y1, y2]) or (x2, y2) <= (x1, y1):
             raise ValueError('Invalid coordinates')
         self._label = label
         self._top_left = (x1, y1)
