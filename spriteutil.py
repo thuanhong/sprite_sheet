@@ -15,6 +15,7 @@ def find_most_common_color(image):
     return most_common_color[1]
 
 
-image = Image.open('im.png')
-# print(timeit.timeit(stmt=lambda: find_most_common_color(image), number=1))
-print(find_most_common_color(image))
+if __name__ == '__main__':
+    image = Image.open('im.png')
+    # print(timeit.timeit(stmt=lambda: find_most_common_color(image), number=1))
+    print(find_most_common_color(image))
