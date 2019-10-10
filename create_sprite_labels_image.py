@@ -32,7 +32,7 @@ def create_sprite_labels_image(sprites, label_map, background=(255, 255, 255)):
 
 
 if __name__ == '__main__':
-    image = Image.open('image/optimized_sprite_sheet.png')
+    image = Image.open('im.png')
     sprites, label_map = find_sprites(image)
     sprite_label_image = create_sprite_labels_image(sprites, label_map)
-    sprite_label_image.save('optimized_sprite_sheet_bounding_box_white_background.png')
+    sprite_label_image.save('round.png')

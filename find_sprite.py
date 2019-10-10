@@ -32,7 +32,7 @@ def filter_segmentation(connect, list_key_connect):
         count = 0
         try:
             connect[x] = list(set(connect[x]))
-            while True:
+            while count < len(connect[x]):
                 connect[x] += connect[connect[x][count]]
                 connect[x] = list(set(connect[x]))
                 count += 1
