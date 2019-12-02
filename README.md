@@ -65,6 +65,5 @@ Sprite (248): [(286, 378), (368, 482)] 83x105
 >>> sprite_label_image.save('optimized_sprite_sheet_bounding_box_transparent_background.png')
 ```
 
-| Sprite Masks with White Background                            | 
-| ------------------------------------------------------------- | ------------------------------------------------------------------- |
-| ![](image/optimized_sprite_sheet_bounding_box_white_background.png) | ![](image/optimized_sprite_sheet_bounding_box_transparent_background.png) |
+| Sprite Masks with White Background| 
+| ![](image/optimized_sprite_sheet_bounding_box_white_background.png) |
